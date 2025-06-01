@@ -20,7 +20,6 @@ function Collection() {
        <Link href={"/products"} ><button className={col.button}>Shop Now</button></Link> 
         </div>
         <div className={col.itemTwo}>
-          <p>NEW COLLECTION</p>
           <img src={"/assets/home-5-png-8.png"}  className={col.img}/>
         </div>
         </div>

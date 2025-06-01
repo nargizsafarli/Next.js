@@ -62,3 +62,41 @@
   color: black;
   border: solid 2px black;
 }
+.navigationButtons {
+  position: absolute;
+  top: 50%;
+  width: 95%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.navBtn {
+  pointer-events: all;
+  background-color: black;
+  color: white;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50%;
+  /* transform: translateY(-50%); */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+  font-size: 14px;
+}
+.navBtn:hover {
+    background-color: #222;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+right:10px;
+}

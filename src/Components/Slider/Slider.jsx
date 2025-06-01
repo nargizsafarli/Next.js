@@ -37,15 +37,26 @@ const sliderData = [
 
   return (
     <div className={styles.sliderContainer}>
-      <Swiper
-        modules={[Navigation,Autoplay]}
-        navigation
+      <div className={styles.navigationButtons}>
+        <div className={`swiper-button-prev ${styles.navBtn}`}>
+        </div>
+        <div className={`swiper-button-next ${styles.navBtn}`}>
+        </div>
+      </div>
+
+            <Swiper
+        modules={[Navigation, Autoplay]}
+        // navigation={{
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // }}
         spaceBetween={50}
-         autoplay={{
-          delay: 3000, // 3 saniyəlik avtomatik keçid
-          disableOnInteraction: false, // İstifadəçi swiper-i manipulyasiya edəndə dayandırma
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
         }}
       >
+
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
             <div className={styles.slideContent}>
@@ -64,7 +75,7 @@ const sliderData = [
                   className={styles.button}
                   onClick={() => router.push('/products')}
                 >
-                  View Products
+                 {t("button")}
                 </button>
               </div>
             </div>
