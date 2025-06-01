@@ -9,6 +9,7 @@ function ProductPage() {
         <Product/>
     </div>
   )
+  
 }
 
 export default ProductPage

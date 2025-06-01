@@ -1,7 +1,12 @@
 {
   "Home": {
-    "title": "Hello World!",
-    "about": "Go to about page",
-    "des":"This is about page."
+    "home": "Home",
+    "about": "About",
+    "product":"Products",
+    "inf":"10% off for registered users and free shipping plus free returns on orders over $70",
+    "slidertext1":"THE ULTIMATE STREET VIBE",
+  "slidertext1":"STYLE YOUR LOKK NOW",
+  "slidertext1":"WEAR TO SPORT TREND",
+  "button":"Wiev Products"
   }
 }

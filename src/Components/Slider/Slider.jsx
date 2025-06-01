@@ -2,45 +2,49 @@
 
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import styles from './Slider.module.css'
 
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+ 
+
+
+const Slider = () => {
+  const router = useRouter()
+   const t=useTranslations("Home")
 
 const sliderData = [
   {
     id: 1,
-    image: '/assets/home-5-png-4.png', // public folderdəki şəkillər
-    title: 'Beautiful Plant',
-    description: 'This is a great plant for your home.',
+    image: '/assets/home-5-png-4.png',
+    description:"THE ULTIMATE STREET VIBE",
   },
   {
     id: 2,
     image: '/assets/home-5-png-8.png',
-    title: 'Stylish Jewelry',
-    description: 'Best jewelry in town.',
+    description: 'STYLE YOUR LOKK NOW',
   },
   {
     id: 3,
     image: '/assets/home-5-png-9.png',
-    title: 'Modern Furniture',
-    description: 'Perfect furniture for your room.',
+    description: 'THE ULTIMATE STREET VIBE',
   },
 ]
-
-const Slider = () => {
-  const router = useRouter()
 
   return (
     <div className={styles.sliderContainer}>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation,Autoplay]}
         navigation
         spaceBetween={50}
-        slidesPerView={1}
+         autoplay={{
+          delay: 3000, // 3 saniyəlik avtomatik keçid
+          disableOnInteraction: false, // İstifadəçi swiper-i manipulyasiya edəndə dayandırma
+        }}
       >
         {sliderData.map((item) => (
           <SwiperSlide key={item.id}>
@@ -55,8 +59,7 @@ const Slider = () => {
                 />
               </div>
               <div className={styles.textContainer}>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
+                <h2>{item.description}</h2>
                 <button
                   className={styles.button}
                   onClick={() => router.push('/products')}

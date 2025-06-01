@@ -1,34 +1,15 @@
-// import axios from 'axios'
-// import React from 'react'
-// import Navbar from '../Navbar/Navbar';
-// import det from "./Detail.module.css"
-
-// const ProductDetail = async({id}:{id:string}) => {
-//     const data= await axios.get(`https://fakestoreapi.com/products/${id}`)
-//     const currentProduct=data.data;
-//   return (
-//     <div>
-//         <Navbar/>
-//         <div>{currentProduct.description}</div>
-//     </div>
-//   )
-// }
-
-// export default ProductDetail
-// 'use client'
-
-
 import axios from 'axios'
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import det from './Detail.module.css'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
+
 
 const ProductDetail = async ({ id }: { id: string }) => {
   const res = await axios.get(`https://fakestoreapi.com/products/${id}`)
   const product = res.data
-//   const router=useRouter()
+
 
   return (
     <>
@@ -48,9 +29,10 @@ const ProductDetail = async ({ id }: { id: string }) => {
           <p className={det.description}>{product.description}</p>
           <p className={det.category}>Category: {product.category}</p>
           <p className={det.price}>Price: ${product.price}</p>
-          <button 
-        //   onClick={() => router.push('/products')} 
-          className={det.button}>Go Back</button>
+        
+            <Link href="/products">
+            <button className={det.button}>Go Back</button>
+          </Link>
         </div>
       </div>
     </>
